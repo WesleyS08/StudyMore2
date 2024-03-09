@@ -48,14 +48,6 @@ public class TelaCadastro extends AppCompatActivity {
             }
         });
 
-        // Configurar o botão Google SignIn
-        SignInButton btnCadastroGoogle = findViewById(R.id.botaoGoogle);
-        btnCadastroGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signInWithGoogle();
-            }
-        });
     }
 
     private void signInWithGoogle() {

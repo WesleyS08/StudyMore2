@@ -19,9 +19,7 @@
     <com.google.android.gms.common.SignInButton
         android:id="@+id/botaoGoogle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:visibility="invisible"/>
+        android:layout_height="wrap_content" />
 
 
 
@@ -40,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:ems="10"
+        android:textColor="@color/white"
         android:hint="@string/edit_senha"
         android:inputType="textPersonName" />
 
@@ -49,7 +48,7 @@
         android:layout_width="259dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:backgroundTint="#673AB7"
+        android:backgroundTint="@color/btns"
         android:text="@string/botao_entrar"
         android:textColor="@color/white"
         app:cornerRadius="15dp" />
@@ -60,10 +59,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="45dp"
+        android:autoText="false"
         android:text="@string/botao_cadastro"
         android:textAlignment="textStart"
+        android:textAllCaps="true"
         android:textColor="@color/white"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textStyle="italic" />
 
 
 

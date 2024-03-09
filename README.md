@@ -75,9 +75,38 @@ Em vez de direcionar o usuário diretamente para a tela de login ou cadastro, fo
 
 ![Aparencia do home](/img/tela%20de%20cadastro.png)
 
+![Aparencia do home](/img/Tela%20de%20Logof.png)
+
 ## Curiosidade
 
 Caso você não faça logout e feche o aplicativo, na próxima vez que abrir, entrará diretamente sem a necessidade de fazer login. Isso proporciona uma experiência mais conveniente para o usuário.
+
+## Tratamento de  Erros 
+
+Ao longo do projeto ultilizei muitos tratamentos de erros, afim de mostrar para o usario o que está acontecendo com a ação cujo ele estaria tentando tomar e um exempro disso é esse caso de erro :
+
+```
+private void loginUsuarioESenha(String usuario, String senha) {
+        mAuth.signInWithEmailAndPassword(usuario, senha)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Usuário logado com sucesso
+                            Log.i(TAG, "signInWithEmailAndPassword: success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(getApplicationContext(), "Login realizado com sucesso",
+                                    Toast.LENGTH_SHORT).show();
+                            abrePrincipal();
+                        } else {
+                            // Falha no login
+                            Log.w(TAG, "signInWithEmailAndPassword: failure", task.getException());
+                            Toast.makeText(getApplicationContext(), "Erro ao realizar login.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+```
 
 ## Considerações Finais
 

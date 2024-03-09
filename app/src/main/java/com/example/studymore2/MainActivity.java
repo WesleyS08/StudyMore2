@@ -17,13 +17,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        // Adicione um atraso de 2 segundos (2000 milissegundos) antes de iniciar a tela de login
+        // Adicione um atraso de 1 segundos (1000 milissegundos) antes de iniciar a tela de login
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(MainActivity.this, TelaLogin.class);
                 startActivity(intent);
             }
-        }, 1000); // Ajuste o tempo conforme necessário (2 segundos neste exemplo)
+        }, 1000);
     }
 }

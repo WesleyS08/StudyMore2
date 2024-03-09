@@ -40,7 +40,7 @@
             android:layout_width="259dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:backgroundTint="#673AB7"
+            android:backgroundTint="@color/btns"
             android:text="@string/botao_cadastra"
             android:textColor="@color/white"
             app:cornerRadius="15dp" />

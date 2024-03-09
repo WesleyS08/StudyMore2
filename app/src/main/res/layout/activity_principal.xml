@@ -15,10 +15,13 @@
         android:layout_height="64dp"
         android:layout_marginStart="108dp"
         android:layout_marginTop="364dp"
-        android:background="@drawable/botao_sair_background"
-        android:backgroundTint="#D33908"
+        android:backgroundTint="@color/btns"
         android:text="@string/logov"
+        android:textAlignment="center"
+        android:textAllCaps="true"
         android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

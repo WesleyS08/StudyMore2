@@ -11,18 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode"/>
+
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true"/>
+
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+
         <activity
             android:name=".TelaCadastro"
             android:exported="false"
-            android:theme="@style/Theme.StudyMore2"/>
+            android:theme="@style/Theme.StudyMore2" />
         <activity
             android:name=".PrincipalActivity"
             android:exported="false"
-            android:theme="@style/Theme.StudyMore2"/>/>
+            android:theme="@style/Theme.StudyMore2" />
         <activity
             android:name=".TelaLogin"
             android:exported="false"
-            android:theme="@style/Theme.StudyMore2"/>
+            android:theme="@style/Theme.StudyMore2" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
