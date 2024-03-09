@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/TeladeLogin"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="334dp"
+        android:layout_marginTop="-35dp"
+        app:srcCompat="@drawable/_5ea216a94bab" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/botaoGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:visibility="invisible"/>
+
+
+
+    <EditText
+        android:id="@+id/editTextTextUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/edit_usuario"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextTextSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/edit_senha"
+        android:inputType="textPersonName" />
+
+
+    <Button
+        android:id="@+id/botaoEntrar"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#673AB7"
+        android:text="@string/botao_entrar"
+        android:textColor="@color/white"
+        app:cornerRadius="15dp" />
+
+    <TextView
+        android:id="@+id/cadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="45dp"
+        android:text="@string/botao_cadastro"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
+
+</LinearLayout>

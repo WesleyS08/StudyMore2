@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/TelaCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/gradient_background"
+        android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="572dp"
+        android:layout_height="403dp"
+        android:layout_marginTop="-55dp"
+        android:src="@drawable/_5ea216a94bab" />
+
+    <EditText
+            android:id="@+id/editTextTextUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="@string/edit_usuario"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editTextTextSenha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="@string/edit_senha"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/botaoEntrar"
+            android:layout_width="259dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="#673AB7"
+            android:text="@string/botao_cadastra"
+            android:textColor="@color/white"
+            app:cornerRadius="15dp" />
+
+    </LinearLayout>

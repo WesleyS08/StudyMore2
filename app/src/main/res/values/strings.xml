@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Study more</string>
+    <string name="edit_usuario">Usuário</string>
+    <string name="edit_senha">Senha</string>
+    <string name="botao_entrar">Entrar</string>
+    <string name="botao_cadastra">salvar</string>
+    <string name="text_ou">Ou</string>
+    <string name="botao_cadastro">Não possui conta? Se cadastre</string>
+    <string name="logov">sair</string>
+    <string name="web_client_id">739622491514-ohg51ho9h4uasnmuveser3040hrk5b8r.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">your_web_client_id_here</string>
+</resources>
