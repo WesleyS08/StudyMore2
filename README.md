@@ -28,7 +28,7 @@ Para criar uma experiência mais próxima de um sistema real, foi utilizado o co
 
 Além disso, a utilização de variáveis para cores e imagens permite uma manutenção mais eficiente do código.
 
-# Aproveitamento de Código
+## Aproveitamento de Código
 
 
 Aproveitando a ideia de reutilização, foram criados arquivos distintos para textos, como no exemplo abaixo:
