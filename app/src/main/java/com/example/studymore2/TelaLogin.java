@@ -229,6 +229,32 @@ public class TelaLogin extends AppCompatActivity {
     }
     //===========================================================================================================================
 
+    public void esqueciSenha(View view) {
+        // Obtém o e-mail inserido pelo usuário
+        String email = binding.editTextTextUsuario.getText().toString().trim();
+
+        // Verifica se o campo de e-mail não está vazio
+        if (email.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Insira seu e-mail antes de redefinir a senha",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Inicia o processo de recuperação de senha
+        mAuth.sendPasswordResetEmail(email)
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "E-mail de recuperação enviado com sucesso",
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Falha ao enviar e-mail de recuperação",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
 
 
     // ====================================== Método para realizar o login com e-mail e senha =============================================

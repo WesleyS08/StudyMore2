@@ -25,6 +25,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.SignInMethodQueryResult;
 
 public class TelaCadastro extends AppCompatActivity {
 
@@ -32,6 +33,9 @@ public class TelaCadastro extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
 
     private static final String TAG = "GoogleSignIn";
+    private boolean isValidEmail(CharSequence target) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,22 +68,6 @@ public class TelaCadastro extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 123;
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account);
-            } catch (ApiException e) {
-                Log.w(TAG, "Google sign in failed", e);
-                Log.e("LoginComGoogle", "Erro no login com Google: " + e.getStatusCode());
-                Toast.makeText(TelaCadastro.this, "Falha ao autenticar com o Google", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 
     //Dentro do método firebaseAuthWithGoogle
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
@@ -108,7 +96,7 @@ public class TelaCadastro extends AppCompatActivity {
         EditText editTextUsuario = findViewById(R.id.editTextTextUsuario);
         EditText editTextSenha = findViewById(R.id.editTextTextSenha);
 
-        String email = editTextUsuario.getText().toString().trim();
+        final String email = editTextUsuario.getText().toString().trim();
         String senha = editTextSenha.getText().toString().trim();
 
         if (!isValidEmail(email)) {
@@ -116,6 +104,29 @@ public class TelaCadastro extends AppCompatActivity {
             return;
         }
 
+        // Verifica se o e-mail já está cadastrado
+        mAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(this, new OnCompleteListener<SignInMethodQueryResult>() {
+            @Override
+            public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                if (task.isSuccessful()) {
+                    SignInMethodQueryResult result = task.getResult();
+                    if (result != null && result.getSignInMethods() != null && result.getSignInMethods().size() > 0) {
+                        // E-mail já cadastrado, exiba uma mensagem ou tome outra ação necessária
+                        Toast.makeText(TelaCadastro.this, "E-mail já cadastrado. Tente usar outro e-mail.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // E-mail ainda não cadastrado, prossiga com o processo de cadastro
+                        cadastrarUsuarioFirebase(email, senha); // Corrigido aqui
+                    }
+                } else {
+                    // Tratamento de erro ao verificar o e-mail
+                    Log.w(TAG, "fetchSignInMethodsForEmail:failure", task.getException());
+                    Toast.makeText(TelaCadastro.this, "Erro ao verificar e-mail", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void cadastrarUsuarioFirebase(String email, String senha) { // Renomeado o método para evitar conflitos de nome
         if (!email.isEmpty() && !senha.isEmpty()) {
             mAuth.createUserWithEmailAndPassword(email, senha)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -135,11 +146,6 @@ public class TelaCadastro extends AppCompatActivity {
         } else {
             Toast.makeText(TelaCadastro.this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    // Função de validação de e-mail
-    private boolean isValidEmail(CharSequence target) {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
     private void abrePrincipal() {
