@@ -2,10 +2,13 @@
     <string name="app_name">Study more</string>
     <string name="edit_usuario">Usuário</string>
     <string name="edit_senha">Senha</string>
+    <string name="confirme_senha">Confirme a Senha</string>
     <string name="botao_entrar">Entrar</string>
     <string name="botao_cadastra">salvar</string>
     <string name="text_ou">Ou</string>
     <string name="botao_cadastro">Não possui conta? Se cadastre</string>
+    <string name="supabase_url">https://nhvdxvzhhkqhegjqvwua.supabase.co</string>
+    <string name="supabase_chave">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5odmR4dnpoaGtxaGVnanF2d3VhIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxMDQ0OTE2MSwiZXhwIjoyMDI2MDI1MTYxfQ.rEsjmGorJAkQu2bHgpajuIZxb8EL94TZj5xQPrr4-lE</string>
     <string name="logov">sair</string>
     <string name="web_client_id">739622491514-v6nvf7ep6gd7hfn1dueptc8icgo3nt1c.apps.googleusercontent.com</string>
 </resources>

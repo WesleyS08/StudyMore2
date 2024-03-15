@@ -9,6 +9,34 @@
     android:orientation="vertical"
     tools:context=".PrincipalActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewMaterias"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btnDeletarConta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <Button
+        android:id="@+id/btnDeletarConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="139dp"
+        android:layout_marginBottom="38dp"
+        android:backgroundTint="#5C021C"
+        android:onClick="onClickDeletarConta"
+        android:text="Deletar Conta"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/botao_sair"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <Button
         android:id="@+id/botao_sair"
         android:layout_width="191dp"
@@ -24,4 +52,17 @@
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAdicionarMateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248dp"
+        android:onClick="onClickAdicionarMateria"
+        android:text="Adicionar Matéria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewMaterias" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

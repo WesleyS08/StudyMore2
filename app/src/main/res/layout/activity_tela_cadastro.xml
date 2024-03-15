@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="572dp"
-        android:layout_height="403dp"
+        android:layout_width="273dp"
+        android:layout_height="174dp"
         android:layout_marginTop="-55dp"
         android:src="@drawable/_5ea216a94bab" />
 
@@ -26,16 +26,35 @@
             android:hint="@string/edit_usuario"
             android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextTextSenha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:ems="10"
-            android:hint="@string/edit_senha"
-            android:inputType="textPassword" />
+    <EditText
+        android:id="@+id/editTextTextSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/edit_senha"
+        android:inputType="textPassword"
+        android:password="true" />
 
-        <Button
+    <EditText
+        android:id="@+id/editTextTextConfirmSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="25dp"
+        android:ems="10"
+        android:hint="@string/confirme_senha"
+        android:inputType="textPassword"
+        android:password="true" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMostrarSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar senha" />
+
+
+    <Button
             android:id="@+id/botaoEntrar"
             android:layout_width="259dp"
             android:layout_height="wrap_content"

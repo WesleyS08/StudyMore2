@@ -11,9 +11,10 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="407dp"
-        android:layout_height="431dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="273dp"
+        android:layout_height="174dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/_5ea216a94bab" />
@@ -22,15 +23,57 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="536dp"
-        android:fontFamily="serif-monospace"
-        android:text="@string/app_name"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="268dp"
+        android:fontFamily="cursive"
+        android:text="Bem vindo ao"
         android:textAlignment="textStart"
+        android:textAllCaps="true"
         android:textColor="#F3F0F0"
-        android:textSize="60sp"
+        android:textSize="34sp"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="332dp"
+        android:fontFamily="cursive"
+        android:text="@string/app_name"
+        android:textAlignment="textStart"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cadastro"
+        android:layout_width="356dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/codornobuttom"
+        android:text="Cadastro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="356dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="136dp"
+        android:backgroundTint="@color/btns"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
